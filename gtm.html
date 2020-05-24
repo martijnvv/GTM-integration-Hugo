@@ -13,7 +13,7 @@
 		'pageId': '{{ with .File }}{{ .UniqueID }}{{ end }}',
 		'pageTitle': '{{ .LinkTitle }}',
 		'pagePermalink': '{{ .Permalink }}',
-		'pageType': '{{ .Type }}'
+		'pageType': '{{ .Type }}',
 		'pageTranslated': {{ .IsTranslated }},
 		{{ if .Params.author -}} 'pageAuthor': '{{ if .Params.author -}}{{ .Params.author }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}',{{ end }}	
 		{{ if .Params.categories}}{{$category := index (.Params.categories) 0}}'pageCategory':'{{ $category }}', {{ end }}
