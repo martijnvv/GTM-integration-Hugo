@@ -1,5 +1,6 @@
-{{ if not (in (.Site.BaseURL | string) "localhost") }}{{ if .Site.Params.gtm_id}}  <link href="https://www.googletagmanager.com" rel="preconnect" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">{{ end }}
+{{ if not (in (.Site.BaseURL | string) "localhost") }}{{ if .Site.Params.gtm_id}}{{ if .Site.Params.gtm_endpoint}}  <link href='https://{{ .Site.Params.gtm_endpoint }}' rel="preconnect" crossorigin>
+  <link rel="dns-prefetch" href='https://{{ .Site.Params.gtm_endpoint }}'>{{ else }}<link href='https://www.googletagmanager.com' rel="preconnect" crossorigin>
+  <link rel="dns-prefetch" href='https://www.googletagmanager.com'>{{ end }}{{ end }}
 {{- if eq .Site.Params.gtm_datalayer "basic"}}  <script>
 	window.dataLayer = window.dataLayer || [];
 	window.dataLayer.push({
@@ -26,5 +27,5 @@
 {{ if .Site.Params.gtm_id}}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	'//{{ if .Site.Params.gtm_endpoint}}{{ .Site.Params.gtm_endpoint }}{{ else }}www.googletagmanager.com{{ end }}/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','{{ .Site.Params.gtm_id }}');</script>{{ end }}{{ end }}
