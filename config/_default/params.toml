@@ -1,0 +1,11 @@
+## Google Tag Manager
+gtm_id = "GTM-FTR4X67"              # enter GTM container ID in format "GTM-XXXXXX"
+gtm_endpoint = "sgtm.example.com"   # enter hostname of GTM server-side endpoint. if unavailable leave blank ""
+gtm_datalayer = "basic"             # set value to "basic" to build and populate a dataLayer array with unique page metadata
+
+### optional - Google Tag Manager Staging/Development Environment 
+### create an new staging/development "environment" from within the GTM Admin interface
+### extract the 'gtm_auth' and 'gtm_preview' query parameters from the 'src' value in the provided environment GTM snippet
+### the gtm environment snippet activates whenever the HUGO_ENVIRONMENT variable is not set to 'production' (such as running the hugo server)
+gtm_env_param_gtm_auth = "dhxfPfIIp62NuQfRTdCd1w"
+gtm_env_param_gtm_preview = "env-8"
