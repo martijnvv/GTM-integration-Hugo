@@ -13,6 +13,7 @@ override_container_id = false       # Set this to true if the GTM Loader client 
 # OPTIONAL - Google Tag Manager Staging Environment
 # create an additional "environment" from within the GTM Admin interface meant for "Staging"
 # extract the 'gtm_auth' and 'gtm_preview' query parameters from the 'src' URL query in the provided GTM snippet
-# this gtm environment snippet activates whenever the HUGO_ENVIRONMENT variable is not set to 'production' (such as running the hugo server)).
-gtm_env_param_gtm_auth = "dhxfPfIIp62NuQfRTdCd1x"
-gtm_env_param_gtm_preview = "env-5"
+# this gtm environment snippet activates whenever the HUGO_ENVIRONMENT variable is not set to 'production' (such as running the hugo server)) and the `use_staging_gtm_environment` is set to true.
+use_staging_gtm_environment = false
+gtm_env_param_gtm_auth = ""     # enter `gtm_auth` string here e.g. "dhxfPfIIp62NuQfRTdCd1w". 
+gtm_env_param_gtm_preview = ""  # enter `gtm_preview` string here e.g. "env-8". Leave blank "" 
